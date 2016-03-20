@@ -1,0 +1,57 @@
+[user]
+	name = Dimitar Mazhlekov
+	email = d.mazhlekov@gmail.com
+
+[alias]
+	co = checkout
+	cp = cherry-pick
+	branches = branch -a
+	tags = tag -l
+	remotes = remote
+	sprout = checkout -b
+	switch = checkout
+	unstash = stash pop
+	forget = checkout -f
+	remember = checkout -f
+	root = rev-parse --show-toplevel
+	back = checkout -
+	amend = commit --amend
+	track = follow
+    state = status -s
+	rewind = reset --hard HEAD~1
+	choose = !git branch | cut -c 3- | selecta | xargs git checkout
+	sl = log --pretty=oneline
+
+[help]
+	autocorrect = 1
+
+[core]
+	filemode = true
+	logallrefupdates = true
+	whitespace = space-before-tab, trailing-space
+
+[color]
+	ui = auto
+
+[branch]
+	autosetupmerge = true
+
+[diff]
+	renames = copies
+	mnemonicprefix = true
+
+[pager]
+	diff = diff-so-fancy | less --tabs=1,5 -RFX
+	show = diff-so-fancy | less --tabs=1,5 -RFX
+
+[push]
+    default = current
+
+[hub]
+	protocol = ssh
+
+[browser "gitscm"]
+	cmd = sh -c 'gnome-open http://git-scm.com/docs/$(basename $1 .html)' --
+
+[include]
+	path = .gitconfig.local

@@ -1,0 +1,4 @@
+# print a separator banner, as wide as the terminal
+function hr {
+	print ${(l:COLUMNS::=:)}
+}

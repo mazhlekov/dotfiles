@@ -1,0 +1,4 @@
+# json prettify
+function prettyjson() {
+    python -m json.tool "$1"
+}

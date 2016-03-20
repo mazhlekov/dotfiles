@@ -1,0 +1,14 @@
+# open a web browser on stackoverflow for a query
+function stack()
+{
+    local s="$_"
+    local query=
+
+    case "$1" in
+        '')   ;;
+        that) query="search?q=${s//[[:space:]]/+}" ;;
+        *)    s="$*"; query="search?q=${s//[[:space:]]/+}" ;;
+    esac
+
+    open "http://stackoverflow.com/${query}"
+}
